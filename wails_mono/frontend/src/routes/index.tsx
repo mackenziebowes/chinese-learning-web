@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "@/assets/images/logo-universal.png";
 import "@/index.css";
-import { Greet } from "../wailsjs/go/main/App";
+import { Greet } from "../../wailsjs/go/main/App";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +15,9 @@ import {
 } from "@/components/ui/card";
 
 function App() {
-  const [resultText, setResultText] = useState("Enter your name to get started!");
+  const [resultText, setResultText] = useState(
+    "Enter your name to get started!",
+  );
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
