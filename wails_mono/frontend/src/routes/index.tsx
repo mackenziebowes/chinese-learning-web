@@ -3,6 +3,7 @@ import logo from "@/assets/images/logo-universal.png";
 import "@/index.css";
 import { Greet } from "../../wailsjs/go/main/App";
 import { Button } from "@/components/ui/button";
+import { RouteButton } from "@/components/custom/route-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -13,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link } from "react-router";
+import { useRouter } from "@/lib/routes";
 
 function App() {
   const [resultText, setResultText] = useState(
@@ -57,9 +58,9 @@ function App() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Button asChild variant="outline">
-              <Link href="/flashcard">Flashcards</Link>
-            </Button>
+            <RouteButton route="/flashcards" variant="outline">
+              Flashcards
+            </RouteButton>
           </CardContent>
           <CardFooter className="flex gap-3">
             <Button asChild>
