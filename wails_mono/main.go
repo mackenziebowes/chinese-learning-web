@@ -6,11 +6,15 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
-	"wails-mono/internal/dictionary"
+	"wails_mono/internal/dictionary"
 )
 
 //go:embed all:frontend/dist
 var assets embed.FS
+
+func (a *App) StartCapture() string {
+	return "Mic check 1-2"
+}
 
 func main() {
 	// Create an instance of the app structure
@@ -30,6 +34,7 @@ func main() {
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
+			dictSvc,
 		},
 	})
 

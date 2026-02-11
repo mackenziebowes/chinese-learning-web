@@ -3,7 +3,7 @@ package dictionary
 import (
 	"encoding/csv"
 	"os"
-	"wails-mono/internal/models"
+	"wails_mono/internal/models"
 )
 
 type DictionaryService struct {
@@ -28,13 +28,13 @@ func NewDictionaryService(filePath string) (*DictionaryService, error) {
 		entries = append(entries, models.Entry{
 			Chinese: lines[i][0],
 			Pinyin: lines[i][1],
-			English: lines[i][2]
+			English: lines[i][2],
 		})
 	}
 
 	return &DictionaryService{entries: entries}, nil
 }
 
-func (s *DictionaryService) Search(query string) []model.Entry {
+func (s *DictionaryService) Search(query string) []models.Entry {
 	return s.entries
 }

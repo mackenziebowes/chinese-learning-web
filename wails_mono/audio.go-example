@@ -1,0 +1,28 @@
+// package main
+
+// import (
+// 	"context"
+// 	"fmt"
+// 	"github.com/gen2brain/malgo"
+// )
+
+// type App struct {
+// 	ctx context.Context
+// }
+
+// func NewApp() *App {
+// 	return &App{}
+// }
+
+// // StartCapture initializes the mic and logs a message
+// func (a *App) StartCapture() string {
+// 	ctx, err := malgo.InitContext(nil, malgo.ContextConfig{}, nil)
+// 	if err != nil {
+// 		return fmt.Sprintf("Error: %v", err)
+// 	}
+// 	defer ctx.Uninit()
+// 	defer ctx.Free()
+
+// 	// This is just a "Hello World" for your mic
+// 	return "Malgo initialized successfully! Ready to record native audio."
+// }
